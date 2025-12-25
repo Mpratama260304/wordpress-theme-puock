@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 随机文章
+Template Name: Random Articles
 */
 $posts = get_posts('numberposts=10&orderby=rand');
 get_header();

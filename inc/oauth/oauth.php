@@ -42,7 +42,7 @@ function pk_oauth_list($user = null)
             'system' => true,
         ],
         'weibo' => [
-            'label' => '微博',
+            'label' => 'Weibo',
             'openid' => $user ? get_the_author_meta('weibo_oauth', $user->ID) : null,
             'class' => \Yurun\OAuthLogin\Weibo\OAuth2::class,
             'name_field' => 'name',
@@ -52,7 +52,7 @@ function pk_oauth_list($user = null)
             'system' => true,
         ],
         'gitee' => [
-            'label' => '码云',
+            'label' => 'Gitee',
             'openid' => $user ? get_the_author_meta('gitee_oauth', $user->ID) : null,
             'class' => \Yurun\OAuthLogin\Gitee\OAuth2::class,
             'icon' => 'fa-solid fa-globe',
@@ -77,7 +77,7 @@ function pk_extra_user_profile_oauth($user)
 {
     $oauth_list = pk_oauth_list($user)
     ?>
-    <h3>第三方账号绑定</h3>
+    <h3><?php _e('Third-party Account Binding', PUOCK); ?></h3>
     <table class="form-table">
         <?php foreach ($oauth_list as $item_key => $item_val):
             if (!pk_is_checked('oauth_' . $item_key)) {
@@ -90,11 +90,11 @@ function pk_extra_user_profile_oauth($user)
                         <a href="<?php echo pk_oauth_url_page_ajax($item_key, get_edit_profile_url()) ?>"
                            target="_blank"
                            class="button"
-                           id="<?php echo $item_key ?>_oauth">立即绑定</a>
+                           id="<?php echo $item_key ?>_oauth"><?php _e('Bind Now', PUOCK); ?></a>
                     <?php else: ?>
                         <a id="<?php echo $item_key ?>_oauth"
                            href="<?php echo pk_oauth_clear_bind_url($item_key, get_edit_profile_url()) ?>"
-                           class="button">解除绑定<?php echo $item_val['label'] ?></a>
+                           class="button"><?php _e('Unbind', PUOCK); ?> <?php echo $item_val['label'] ?></a>
                     <?php endif; ?>
                 </td>
             </tr>
@@ -142,7 +142,7 @@ function oauth_redirect_page($success = true, $info = '', $from_redirect = '')
     } else {
         pk_session_call(function () use ($info) {
             if (empty($info)){
-                $info = '发生未知错误';
+                $info = __('An unknown error occurred', PUOCK);
             }
             $_SESSION['error_info'] = $info;
         });
@@ -183,7 +183,7 @@ function pk_oauth_start_redirect()
     $redirect = $_GET['redirect'];
     $oauth = pk_oauth_get_base($type, $redirect);
     if (!$oauth) {
-        oauth_redirect_page(false, '不支持的第三方授权请求', $redirect);
+        oauth_redirect_page(false, __('Unsupported third-party auth request', PUOCK), $redirect);
         exit;
     }
     $url = $oauth->base->getAuthUrl();
@@ -215,7 +215,7 @@ function pk_oauth_callback_execute($type, $redirect)
     }
     $oauth = pk_oauth_get_base($type, $redirect);
     if (!$oauth) {
-        oauth_redirect_page(false, '无效授权请求', $redirect);
+        oauth_redirect_page(false, __('Invalid auth request', PUOCK), $redirect);
         exit;
     }
     $oauth_state = null;
@@ -223,7 +223,7 @@ function pk_oauth_callback_execute($type, $redirect)
         $oauth_state = $_SESSION['oauth_state_' . $type];
     });
     if (empty($oauth_state)) {
-        oauth_redirect_page(false, '无效的授权状态', $redirect);
+        oauth_redirect_page(false, __('Invalid auth state', PUOCK), $redirect);
         exit;
     }
     $oauthBase = $oauth->base;
@@ -231,17 +231,17 @@ function pk_oauth_callback_execute($type, $redirect)
         $oauthBase->getAccessToken($oauth_state);
         $userInfo = $oauthBase->getUserInfo();
     } catch (Exception $e) {
-        oauth_redirect_page(false, '授权失败：' . $e->getMessage(), $redirect);
+        oauth_redirect_page(false, __('Auth failed:', PUOCK) . ' ' . $e->getMessage(), $redirect);
         exit;
     }
     if (is_user_logged_in()) {
         $bind_users = get_users(array('meta_key' => $type . '_oauth', 'meta_value' => $oauthBase->openid, 'exclude' => get_current_user_id()));
         if ($bind_users && count($bind_users) > 0) {
-            oauth_redirect_page(false, '绑定失败：此授权' . $oauth->oauth['label'] . '账户已被其他账户使用', $redirect);
+            oauth_redirect_page(false, __('Binding failed: This', PUOCK) . ' ' . $oauth->oauth['label'] . ' ' . __('account is already used by another account', PUOCK), $redirect);
             exit;
         }
         if (!empty(get_user_meta(get_current_user_id(), $type . "_oauth"))) {
-            oauth_redirect_page(false, '绑定失败：此账户已绑定其他' . $oauth->oauth['label'] . '授权账户', $redirect);
+            oauth_redirect_page(false, __('Binding failed: This account is already bound to another', PUOCK) . ' ' . $oauth->oauth['label'] . ' ' . __('account', PUOCK), $redirect);
             exit;
         }
         $user = wp_get_current_user();
@@ -251,9 +251,9 @@ function pk_oauth_callback_execute($type, $redirect)
     } else {
         $users = get_users(array('meta_key' => $type . '_oauth', 'meta_value' => $oauthBase->openid));
         if (!$users || count($users) <= 0) {
-            //不存在用户，先自动注册再登录
+            //User doesn't exist, auto-register then login
             if (pk_is_checked('oauth_close_register')) {
-                oauth_redirect_page(false, '您的' . $oauth->oauth['label'] . '账号未绑定本站账户，当前已关闭自动注册，请手动注册后再进入个人资料中进行绑定', $redirect);
+                oauth_redirect_page(false, __('Your', PUOCK) . ' ' . $oauth->oauth['label'] . ' ' . __('account is not bound to a site account. Auto-registration is disabled. Please register manually and bind in your profile settings.', PUOCK), $redirect);
                 exit;
             }
             $wp_create_nonce = wp_create_nonce($oauthBase->openid);
@@ -286,7 +286,7 @@ function pk_oauth_form()
     $oauth_list = pk_oauth_list();
     foreach ($oauth_list as $key => $val) {
         if (pk_is_checked('oauth_' . $key)) {
-            $out .= '<a style="margin-right:5px;margin-bottom:10px" href="' . pk_oauth_url_page_ajax($key, admin_url()) . '" class="button button-large">' . $val['label'] . '登录</a>';
+            $out .= '<a style="margin-right:5px;margin-bottom:10px" href="' . pk_oauth_url_page_ajax($key, admin_url()) . '" class="button button-large">' . $val['label'] . ' ' . __('Login', PUOCK) . '</a>';
         }
     }
     $out .= "</div>";

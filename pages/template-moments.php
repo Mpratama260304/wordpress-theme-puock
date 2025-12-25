@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 时光圈
+Template Name: Moments
 */
 
 get_header();

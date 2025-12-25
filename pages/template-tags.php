@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 标签概览
+Template Name: Tag Overview
 */
 
 get_header();

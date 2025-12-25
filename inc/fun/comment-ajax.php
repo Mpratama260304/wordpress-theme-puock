@@ -23,7 +23,7 @@ function pk_check_comment_for_chinese($comment)
 {
     $pattern = '/[\x{4e00}-\x{9fa5}]/u';
     if (!preg_match($pattern, $comment)) {
-        pk_comment_err('您的评论必须包含至少一个中文字符');
+        pk_comment_err(__('Your comment must contain at least one Chinese character', PUOCK));
     }
     return $comment;
 }
@@ -40,11 +40,11 @@ function pk_comment_ajax()
     nocache_headers();
 
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        pk_comment_err('无效的请求方式', false);
+        pk_comment_err(__('Invalid request method', PUOCK), false);
     }
 
     if (pk_post_comment_is_closed()) {
-        pk_comment_err('评论功能已关闭', false);
+        pk_comment_err(__('Comments are closed', PUOCK), false);
     }
 
     //是否需要进行验证
@@ -53,7 +53,7 @@ function pk_comment_ajax()
             $token = $_REQUEST['comment-vd'];
 
             if (empty($token)) {
-                pk_comment_err('无效验证码，已刷新请重新输入');
+                pk_comment_err(__('Invalid captcha, refreshed please try again', PUOCK));
             }
             $validate_pass = true;
             pk_session_call(function () use ($token, &$validate_pass) {
@@ -64,7 +64,7 @@ function pk_comment_ajax()
                 unset($_SESSION['comment_vd']);
             });
             if (!$validate_pass) {
-                pk_comment_err('验证码不正确', false);
+                pk_comment_err(__('Incorrect captcha', PUOCK), false);
             }
         } else {
             try {
@@ -81,7 +81,7 @@ function pk_comment_ajax()
 
     if (!$post || empty($post->comment_status)) {
         do_action('comment_id_not_found', $comment_post_ID);
-        pk_comment_err('无效的评论回复');
+        pk_comment_err(__('Invalid comment reply', PUOCK));
     }
 
     $status = get_post_status($post);
@@ -90,16 +90,16 @@ function pk_comment_ajax()
 
     if (!comments_open($comment_post_ID)) {
         do_action('comment_closed', $comment_post_ID);
-        pk_comment_err('评论已关闭');
+        pk_comment_err(__('Comments are closed', PUOCK));
     } elseif ('trash' == $status) {
         do_action('comment_on_trash', $comment_post_ID);
-        pk_comment_err('无效评论');
+        pk_comment_err(__('Invalid comment', PUOCK));
     } elseif (!$status_obj->public && !$status_obj->private) {
         do_action('comment_on_draft', $comment_post_ID);
-        pk_comment_err('无法对草稿进行评论');
+        pk_comment_err(__('Cannot comment on drafts', PUOCK));
     } elseif (post_password_required($comment_post_ID)) {
         do_action('comment_on_password_protected', $comment_post_ID);
-        pk_comment_err('无法对受密码保护进行评论');
+        pk_comment_err(__('Cannot comment on password protected posts', PUOCK));
     } else {
         do_action('pre_comment_on_post', $comment_post_ID);
     }
@@ -124,7 +124,7 @@ function pk_comment_ajax()
             }
         }
     } else if (get_option('comment_registration') || 'private' == $status) {
-        pk_comment_err('对不起，您必须登录后才能发表评论');
+        pk_comment_err(__('Sorry, you must be logged in to comment', PUOCK));
     }
 
     $comment_type = '';

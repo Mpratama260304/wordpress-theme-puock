@@ -62,11 +62,11 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
                     <div class="search-layout">
                         <div class="search-input">
                             <input required type="text" name="s" class="form-control"
-                                   placeholder="<?php _e('请输入搜索关键字', PUOCK) ?>">
+                                   placeholder="<?php _e('Please enter keyword to search', PUOCK) ?>">
                         </div>
                         <div class="search-start">
                             <button type="submit" class="btn-dark btn"><i
-                                        class="fa fa-search mr-1"></i><?php _e('搜索', PUOCK) ?></button>
+                                        class="fa fa-search mr-1"></i><?php _e('Search', PUOCK) ?></button>
                         </div>
                         <div class="search-close-btn">
                             <button type="button" class="btn-danger btn ml-1 search-modal-btn"><i

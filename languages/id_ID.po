@@ -1,0 +1,760 @@
+# Indonesian Translation for Puock Theme
+# Copyright (C) 2024 Puock Theme
+# This file is distributed under the same license as the Puock Theme package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Puock Theme 3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# Navigation and General UI
+msgid "Home"
+msgstr "Beranda"
+
+msgid "Search"
+msgstr "Cari"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Previous"
+msgstr "Sebelumnya"
+
+msgid "Next"
+msgstr "Berikutnya"
+
+msgid "Loading..."
+msgstr "Memuat..."
+
+msgid "Load More"
+msgstr "Muat Lebih Banyak"
+
+msgid "View More"
+msgstr "Lihat Selengkapnya"
+
+msgid "View Now"
+msgstr "Lihat Sekarang"
+
+msgid "Read More"
+msgstr "Baca Selengkapnya"
+
+msgid "Back to Top"
+msgstr "Kembali ke Atas"
+
+# Post-related
+msgid "Posted on"
+msgstr "Diposting pada"
+
+msgid "Author"
+msgstr "Penulis"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Tags"
+msgstr "Tag"
+
+msgid "Views"
+msgstr "Dilihat"
+
+msgid "Comments"
+msgstr "Komentar"
+
+msgid "No Comments"
+msgstr "Belum Ada Komentar"
+
+msgid "Leave a Comment"
+msgstr "Tinggalkan Komentar"
+
+msgid "Comment"
+msgstr "Komentar"
+
+msgid "Reply"
+msgstr "Balas"
+
+msgid "Reply to this comment"
+msgstr "Balas komentar ini"
+
+msgid "Your comment is awaiting moderation!"
+msgstr "Komentar Anda sedang menunggu moderasi!"
+
+msgid "Comment visible to author only"
+msgstr "Komentar hanya terlihat oleh penulis"
+
+msgid "Comments are closed"
+msgstr "Komentar ditutup"
+
+msgid "Submit Comment"
+msgstr "Kirim Komentar"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Website"
+msgstr "Situs Web"
+
+msgid "Your comment"
+msgstr "Komentar Anda"
+
+msgid "Sticky"
+msgstr "Disematkan"
+
+msgid "Original"
+msgstr "Asli"
+
+msgid "Source"
+msgstr "Sumber"
+
+# Search
+msgid "Search Results for:"
+msgstr "Hasil Pencarian untuk:"
+
+msgid "Nothing Found"
+msgstr "Tidak Ditemukan"
+
+msgid "Sorry, no posts matched your criteria."
+msgstr "Maaf, tidak ada artikel yang sesuai dengan kriteria Anda."
+
+msgid "Try searching for something else"
+msgstr "Coba cari yang lain"
+
+msgid "Enter keywords..."
+msgstr "Masukkan kata kunci..."
+
+# 404 Page
+msgid "Page Not Found"
+msgstr "Halaman Tidak Ditemukan"
+
+msgid "Oops! The page you are looking for does not exist."
+msgstr "Ups! Halaman yang Anda cari tidak ada."
+
+msgid "It might have been removed, renamed, or did not exist in the first place."
+msgstr "Mungkin telah dihapus, diganti nama, atau tidak pernah ada."
+
+msgid "Go to Homepage"
+msgstr "Kembali ke Beranda"
+
+# Date and Time
+msgid "years ago"
+msgstr "tahun yang lalu"
+
+msgid "months ago"
+msgstr "bulan yang lalu"
+
+msgid "weeks ago"
+msgstr "minggu yang lalu"
+
+msgid "days ago"
+msgstr "hari yang lalu"
+
+msgid "hours ago"
+msgstr "jam yang lalu"
+
+msgid "minutes ago"
+msgstr "menit yang lalu"
+
+msgid "just now"
+msgstr "baru saja"
+
+# Login/Registration
+msgid "Login"
+msgstr "Masuk"
+
+msgid "Logout"
+msgstr "Keluar"
+
+msgid "Register"
+msgstr "Daftar"
+
+msgid "Username"
+msgstr "Nama Pengguna"
+
+msgid "Password"
+msgstr "Kata Sandi"
+
+msgid "Remember me"
+msgstr "Ingat saya"
+
+msgid "Forgot password?"
+msgstr "Lupa kata sandi?"
+
+msgid "Login Now"
+msgstr "Masuk Sekarang"
+
+msgid "Register Now"
+msgstr "Daftar Sekarang"
+
+msgid "Username/Email"
+msgstr "Nama Pengguna/Email"
+
+msgid "Enter username or email"
+msgstr "Masukkan nama pengguna atau email"
+
+msgid "Enter password"
+msgstr "Masukkan kata sandi"
+
+msgid "Verification Code"
+msgstr "Kode Verifikasi"
+
+msgid "Enter verification code"
+msgstr "Masukkan kode verifikasi"
+
+msgid "Don't have an account? Register now"
+msgstr "Belum punya akun? Daftar sekarang"
+
+msgid "Already have an account? Login now"
+msgstr "Sudah punya akun? Masuk sekarang"
+
+msgid "Forgot password? Reset now"
+msgstr "Lupa kata sandi? Reset sekarang"
+
+msgid "Remember password? Login now"
+msgstr "Ingat kata sandi? Masuk sekarang"
+
+msgid "Login successful"
+msgstr "Berhasil masuk"
+
+msgid "Registration successful, logged in automatically"
+msgstr "Pendaftaran berhasil, otomatis masuk"
+
+msgid "Username or password incorrect"
+msgstr "Nama pengguna atau kata sandi salah"
+
+msgid "Invalid username"
+msgstr "Nama pengguna tidak valid"
+
+msgid "Invalid password"
+msgstr "Kata sandi tidak valid"
+
+msgid "Invalid email"
+msgstr "Email tidak valid"
+
+msgid "Too many login failures, please try again in "
+msgstr "Terlalu banyak gagal login, coba lagi dalam "
+
+msgid " minutes"
+msgstr " menit"
+
+msgid "Verification code error"
+msgstr "Kode verifikasi salah"
+
+# Password Reset
+msgid "New Password"
+msgstr "Kata Sandi Baru"
+
+msgid "Confirm New Password"
+msgstr "Konfirmasi Kata Sandi Baru"
+
+msgid "Confirm password"
+msgstr "Konfirmasi kata sandi"
+
+msgid "Enter 5-10 character username"
+msgstr "Masukkan nama pengguna 5-10 karakter"
+
+msgid "Enter 6-18 character password"
+msgstr "Masukkan kata sandi 6-18 karakter"
+
+msgid "Enter 6-18 character new password"
+msgstr "Masukkan kata sandi baru 6-18 karakter"
+
+msgid "Re-enter 6-18 character new password"
+msgstr "Masukkan ulang kata sandi baru 6-18 karakter"
+
+msgid "Enter email"
+msgstr "Masukkan email"
+
+msgid "Send Email"
+msgstr "Kirim Email"
+
+msgid "Passwords do not match"
+msgstr "Kata sandi tidak cocok"
+
+msgid "No user found with this email"
+msgstr "Tidak ada pengguna dengan email ini"
+
+msgid "Password Reset - "
+msgstr "Reset Kata Sandi - "
+
+msgid "Your password reset link is: %s, please click the link within 5 minutes to reset your password"
+msgstr "Link reset kata sandi Anda adalah: %s, silakan klik link dalam 5 menit untuk mereset kata sandi Anda"
+
+msgid "Password reset link has been sent to your email"
+msgstr "Link reset kata sandi telah dikirim ke email Anda"
+
+msgid "Failed to send password reset email"
+msgstr "Gagal mengirim email reset kata sandi"
+
+msgid "Password reset failed: Invalid reset link"
+msgstr "Reset kata sandi gagal: Link reset tidak valid"
+
+msgid "Password reset failed: User does not exist"
+msgstr "Reset kata sandi gagal: Pengguna tidak ada"
+
+msgid "Password reset successful, please go back to login"
+msgstr "Reset kata sandi berhasil, silakan kembali ke halaman login"
+
+# Third-party Login
+msgid "Third-party Login"
+msgstr "Login Pihak Ketiga"
+
+msgid "Third-party Account Binding"
+msgstr "Pengikatan Akun Pihak Ketiga"
+
+msgid "Bind Now"
+msgstr "Ikat Sekarang"
+
+msgid "Unbind"
+msgstr "Lepaskan Ikatan"
+
+msgid "Unsupported third-party auth request"
+msgstr "Permintaan autentikasi pihak ketiga tidak didukung"
+
+msgid "Invalid auth request"
+msgstr "Permintaan autentikasi tidak valid"
+
+msgid "Invalid auth state"
+msgstr "Status autentikasi tidak valid"
+
+msgid "Auth failed:"
+msgstr "Autentikasi gagal:"
+
+msgid "An unknown error occurred"
+msgstr "Terjadi kesalahan yang tidak diketahui"
+
+msgid "Binding failed: This"
+msgstr "Pengikatan gagal: Akun"
+
+msgid "account is already used by another account"
+msgstr "sudah digunakan oleh akun lain"
+
+msgid "Binding failed: This account is already bound to another"
+msgstr "Pengikatan gagal: Akun ini sudah diikat ke akun"
+
+msgid "account"
+msgstr "lain"
+
+msgid "Your"
+msgstr "Akun"
+
+msgid "account is not bound to a site account. Auto-registration is disabled. Please register manually and bind in your profile settings."
+msgstr "Anda tidak terikat ke akun situs. Pendaftaran otomatis dinonaktifkan. Silakan daftar secara manual dan ikat di pengaturan profil Anda."
+
+# User Center
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Your basic profile information"
+msgstr "Informasi profil dasar Anda"
+
+msgid "Nickname"
+msgstr "Nama Panggilan"
+
+msgid "Website URL"
+msgstr "URL Situs Web"
+
+msgid "Bio"
+msgstr "Biografi"
+
+msgid "Please login first"
+msgstr "Silakan masuk terlebih dahulu"
+
+msgid "Save failed"
+msgstr "Gagal menyimpan"
+
+msgid "Saved successfully"
+msgstr "Berhasil disimpan"
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "WP Admin"
+msgstr "Admin WP"
+
+msgid "Confirm logout?"
+msgstr "Konfirmasi keluar?"
+
+msgid "Username cannot be changed"
+msgstr "Nama pengguna tidak dapat diubah"
+
+# Comments Section
+msgid "Your comment must contain at least one Chinese character"
+msgstr "Komentar Anda harus mengandung setidaknya satu karakter Cina"
+
+msgid "Invalid request method"
+msgstr "Metode permintaan tidak valid"
+
+msgid "Invalid captcha, refreshed please try again"
+msgstr "Captcha tidak valid, sudah disegarkan silakan coba lagi"
+
+msgid "Incorrect captcha"
+msgstr "Captcha salah"
+
+msgid "Invalid comment reply"
+msgstr "Balasan komentar tidak valid"
+
+msgid "Invalid comment"
+msgstr "Komentar tidak valid"
+
+msgid "Cannot comment on drafts"
+msgstr "Tidak dapat berkomentar pada draf"
+
+msgid "Cannot comment on password protected posts"
+msgstr "Tidak dapat berkomentar pada artikel yang dilindungi kata sandi"
+
+msgid "Sorry, you must be logged in to comment"
+msgstr "Maaf, Anda harus masuk untuk berkomentar"
+
+# AI Assistant
+msgid "AI Assistant not enabled"
+msgstr "Asisten AI tidak diaktifkan"
+
+msgid "Guests are not allowed to use AI Assistant"
+msgstr "Pengunjung tidak diizinkan menggunakan Asisten AI"
+
+msgid "Please enter a description"
+msgstr "Silakan masukkan deskripsi"
+
+msgid "Please configure OpenAI API Key first"
+msgstr "Silakan konfigurasikan API Key OpenAI terlebih dahulu"
+
+msgid "AI Drawing is not enabled"
+msgstr "Gambar AI tidak diaktifkan"
+
+msgid "AI Drawing failed: Response parse error"
+msgstr "Gambar AI gagal: Kesalahan parsing respons"
+
+msgid "AI Drawing failed:"
+msgstr "Gambar AI gagal:"
+
+msgid "AI Q&A parse error:"
+msgstr "Kesalahan parsing Tanya Jawab AI:"
+
+msgid "AI Q&A error:"
+msgstr "Kesalahan Tanya Jawab AI:"
+
+# Shortcodes
+msgid "Music Player"
+msgstr "Pemutar Musik"
+
+msgid "Enter link URL"
+msgstr "Masukkan URL link"
+
+msgid "Code Embed"
+msgstr "Sisipkan Kode"
+
+msgid "Enter code"
+msgstr "Masukkan kode"
+
+msgid "Visible after reply"
+msgstr "Terlihat setelah membalas"
+
+msgid "Enter content"
+msgstr "Masukkan konten"
+
+msgid "Visible after login"
+msgstr "Terlihat setelah masuk"
+
+msgid "Github Repository Card"
+msgstr "Kartu Repository Github"
+
+msgid "Visible after login and email verification"
+msgstr "Terlihat setelah masuk dan verifikasi email"
+
+msgid "Video Player"
+msgstr "Pemutar Video"
+
+msgid "File Download"
+msgstr "Unduh File"
+
+msgid "File URL"
+msgstr "URL File"
+
+msgid "Visible after password"
+msgstr "Terlihat setelah memasukkan kata sandi"
+
+msgid "Enter password to view"
+msgstr "Masukkan kata sandi untuk melihat"
+
+msgid "Collapsible Panel"
+msgstr "Panel Lipat"
+
+msgid "Alert Box"
+msgstr "Kotak Peringatan"
+
+msgid "Video warning: Play URL cannot be empty"
+msgstr "Peringatan video: URL tidak boleh kosong"
+
+msgid "Audio warning: Play URL cannot be empty"
+msgstr "Peringatan audio: URL tidak boleh kosong"
+
+msgid "File name:"
+msgstr "Nama file:"
+
+msgid "File size:"
+msgstr "Ukuran file:"
+
+msgid "Download notice:"
+msgstr "Pemberitahuan unduhan:"
+
+msgid "Download URL:"
+msgstr "URL unduhan:"
+
+msgid "Hidden content here. Submit a comment and refresh after approval to view!"
+msgstr "Konten tersembunyi di sini. Kirim komentar dan segarkan setelah disetujui untuk melihat!"
+
+msgid "Hidden content here. Log in to view!"
+msgstr "Konten tersembunyi di sini. Masuk untuk melihat!"
+
+msgid "Hidden content. Login and verify email to view!"
+msgstr "Konten tersembunyi. Masuk dan verifikasi email untuk melihat!"
+
+msgid "Hidden content. Enter correct password to view!"
+msgstr "Konten tersembunyi. Masukkan kata sandi yang benar untuk melihat!"
+
+msgid "Wrong password. Please check and try again"
+msgstr "Kata sandi salah. Silakan periksa dan coba lagi"
+
+# Share and Social
+msgid "Share"
+msgstr "Bagikan"
+
+msgid "Share to"
+msgstr "Bagikan ke"
+
+msgid "Scan with WeChat"
+msgstr "Pindai dengan WeChat"
+
+msgid "WeChat QR Code"
+msgstr "Kode QR WeChat"
+
+msgid "Invalid post ID: "
+msgstr "ID artikel tidak valid: "
+
+msgid "Copy"
+msgstr "Salin"
+
+msgid "Copied!"
+msgstr "Disalin!"
+
+msgid "Copy failed"
+msgstr "Gagal menyalin"
+
+# Rewards/Donations
+msgid "No reward QR codes available"
+msgstr "Tidak ada kode QR hadiah tersedia"
+
+msgid "Alipay Donation"
+msgstr "Donasi Alipay"
+
+msgid "WeChat Donation"
+msgstr "Donasi WeChat"
+
+msgid "Please scan with Alipay"
+msgstr "Silakan pindai dengan Alipay"
+
+msgid "Please scan with WeChat"
+msgstr "Silakan pindai dengan WeChat"
+
+# Emoji/Smiley
+msgid "Emoji source:"
+msgstr "Sumber emoji:"
+
+# Admin and Settings
+msgid "Theme Settings"
+msgstr "Pengaturan Tema"
+
+msgid "Theme Documentation"
+msgstr "Dokumentasi Tema"
+
+msgid "Sponsor Theme"
+msgstr "Sponsor Tema"
+
+msgid "Theme Community"
+msgstr "Komunitas Tema"
+
+msgid "Github Open Source"
+msgstr "Sumber Terbuka Github"
+
+msgid "Insufficient permissions"
+msgstr "Izin tidak mencukupi"
+
+# SEO Settings
+msgid "SEO Settings"
+msgstr "Pengaturan SEO"
+
+msgid "Custom SEO Keywords"
+msgstr "Kata Kunci SEO Kustom"
+
+msgid "Separate multiple keywords with \", \", defaults to tags"
+msgstr "Pisahkan beberapa kata kunci dengan \", \", default ke tag"
+
+msgid "Custom SEO Description"
+msgstr "Deskripsi SEO Kustom"
+
+msgid "Defaults to first 150 characters (recommended max 150)"
+msgstr "Default ke 150 karakter pertama (disarankan maksimal 150)"
+
+msgid "Basic Settings"
+msgstr "Pengaturan Dasar"
+
+msgid "Hide Sidebar"
+msgstr "Sembunyikan Sidebar"
+
+msgid "Comments visible to author only"
+msgstr "Komentar hanya terlihat oleh penulis"
+
+msgid "Source Name"
+msgstr "Nama Sumber"
+
+msgid "Fill this if not original, including next field"
+msgstr "Isi ini jika bukan asli, termasuk kolom berikutnya"
+
+msgid "Source URL"
+msgstr "URL Sumber"
+
+msgid "Use theme redirect page for internal links"
+msgstr "Gunakan halaman redirect tema untuk link internal"
+
+msgid "Link Display Category ID List"
+msgstr "Daftar ID Kategori Tampilan Link"
+
+msgid "(Only effective for <b>Friendly Links</b> and <b>Navigation</b> templates, leave empty to hide, multiple selection allowed)"
+msgstr "(Hanya efektif untuk template <b>Link Teman</b> dan <b>Navigasi</b>, kosongkan untuk menyembunyikan, pilihan ganda diizinkan)"
+
+msgid "Book Display Category ID List"
+msgstr "Daftar ID Kategori Tampilan Buku"
+
+msgid "(Only effective for <b>Book Recommendations</b> template, leave empty to hide, multiple selection allowed)"
+msgstr "(Hanya efektif untuk template <b>Rekomendasi Buku</b>, kosongkan untuk menyembunyikan, pilihan ganda diizinkan)"
+
+# Widgets
+msgid "All Categories"
+msgstr "Semua Kategori"
+
+msgid "Hide Title"
+msgstr "Sembunyikan Judul"
+
+msgid "Icon Class"
+msgstr "Kelas Ikon"
+
+msgid "Block CSS Class"
+msgstr "Kelas CSS Blok"
+
+# Moments (Custom Post Type)
+msgid "Moments"
+msgstr "Momen"
+
+msgid "Add"
+msgstr "Tambah"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "New"
+msgstr "Baru"
+
+msgid "View"
+msgstr "Lihat"
+
+msgid "No"
+msgstr "Tidak"
+
+msgid "No trashed"
+msgstr "Tidak ada yang dihapus"
+
+# Page Templates
+msgid "AI Assistant"
+msgstr "Asisten AI"
+
+msgid "Friendly Links"
+msgstr "Link Teman"
+
+msgid "Sitemap"
+msgstr "Peta Situs"
+
+msgid "Archives"
+msgstr "Arsip"
+
+msgid "Lucky Draw"
+msgstr "Undian Beruntung"
+
+msgid "Tag Cloud"
+msgstr "Awan Tag"
+
+msgid "Reading List"
+msgstr "Daftar Bacaan"
+
+msgid "Book Recommendations"
+msgstr "Rekomendasi Buku"
+
+msgid "Random Articles"
+msgstr "Artikel Acak"
+
+# Company Page
+msgid "Product Overview"
+msgstr "Gambaran Produk"
+
+# Copyright
+msgid "Copyright"
+msgstr "Hak Cipta"
+
+msgid "All Rights Reserved"
+msgstr "Semua Hak Dilindungi"
+
+msgid "This article is original"
+msgstr "Artikel ini adalah asli"
+
+msgid "Reprint please indicate the source"
+msgstr "Cetak ulang harap cantumkan sumber"
+
+# Misc
+msgid "Notice"
+msgstr "Pemberitahuan"
+
+msgid "Confirm"
+msgstr "Konfirmasi"
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Yes"
+msgstr "Ya"
+
+msgid "Error"
+msgstr "Kesalahan"
+
+msgid "Success"
+msgstr "Berhasil"
+
+msgid "Warning"
+msgstr "Peringatan"
+
+msgid "Info"
+msgstr "Informasi"
+
+msgid "Like"
+msgstr "Suka"
+
+msgid "Likes"
+msgstr "Suka"
+
+msgid "You have already liked this"
+msgstr "Anda sudah menyukai ini"
+
+msgid "Like successful"
+msgstr "Berhasil menyukai"

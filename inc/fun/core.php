@@ -86,25 +86,25 @@ function pk_get_theme_option_url($to = '')
 }
 
 
-// 顶部添加自定义菜单
+// Add custom menu to admin bar
 function pk_toolbar_link(WP_Admin_Bar $bar)
 {
     $menu_id = 'theme-quick-start';
     $bar->add_node(array(
         'id' => $menu_id,
-        'title' => '<i class="czs-paper-plane"></i>&nbsp;Puock Theme 快捷入口',
+        'title' => '<i class="czs-paper-plane"></i>&nbsp;Puock Theme Quick Access',
         'href' => '#'
     ));
     $bar->add_node(array(
         'id' => 'theme-setting',
         'parent' => $menu_id,
-        'title' => '<i class="czs-setting" style="color:#9627e3"></i>&nbsp;主题设置',
+        'title' => '<i class="czs-setting" style="color:#9627e3"></i>&nbsp;' . __('Theme Settings', PUOCK),
         'href' => pk_get_theme_option_url()
     ));
     $bar->add_node(array(
         'id' => 'theme-docs',
         'parent' => $menu_id,
-        'title' => '<i class="czs-doc-file" style="color:#496cf9"></i>&nbsp;主题文档',
+        'title' => '<i class="czs-doc-file" style="color:#496cf9"></i>&nbsp;' . __('Theme Documentation', PUOCK),
         'href' => 'https://licoy.cn/puock-doc.html',
         'meta' => array(
             'target' => 'blank'
@@ -113,7 +113,7 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-sponsor',
         'parent' => $menu_id,
-        'title' => '<i class="czs-heart" style="color:#f54747"></i>&nbsp;赞助主题',
+        'title' => '<i class="czs-heart" style="color:#f54747"></i>&nbsp;' . __('Sponsor Theme', PUOCK),
         'href' => 'https://licoy.cn/puock-theme-sponsor.html',
         'meta' => array(
             'target' => 'blank'
@@ -122,7 +122,7 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-group',
         'parent' => $menu_id,
-        'title' => '<i class="czs-weixin" style="color:#177b17"></i>&nbsp;主题交流群',
+        'title' => '<i class="czs-weixin" style="color:#177b17"></i>&nbsp;' . __('Theme Community', PUOCK),
         'href' => 'https://licoy.cn/go/puock-update.php?r=qq_qun',
         'meta' => array(
             'target' => 'blank'
@@ -131,7 +131,7 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-github',
         'parent' => $menu_id,
-        'title' => '<i class="czs-github-logo"></i>&nbsp;Github 开源主页',
+        'title' => '<i class="czs-github-logo"></i>&nbsp;' . __('Github Open Source', PUOCK),
         'href' => 'https://github.com/Licoy/wordpress-theme-puock',
         'meta' => array(
             'target' => 'blank'

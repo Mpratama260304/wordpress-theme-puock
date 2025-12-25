@@ -153,7 +153,7 @@ class Puock {
             const form = $(this.ct(e));
             const formEls = form.find(":input")
             if (formEls.length === 0) {
-                this.toast('表单元素为空', TYPE_DANGER)
+                this.toast('Form element is empty', TYPE_DANGER)
                 return false;
             }
             for (let i = 0; i < formEls.length; i++) {
@@ -200,7 +200,7 @@ class Puock {
                     },
                     error: (e) => {
                         this.stopLoading(loading)
-                        this.toast(`请求错误：${e.statusText}`, TYPE_DANGER)
+                        this.toast(`Request error: ${e.statusText}`, TYPE_DANGER)
                         this.loadCommentCaptchaImage(form, true)
                     }
                 })
@@ -493,11 +493,11 @@ class Puock {
         });
         cp.on("success", (e) => {
             let name = $(e.trigger).attr('data-cp-title') || "";
-            this.toast(`复制${name}成功`)
+            this.toast(`Copied ${name} successfully`)
         })
         cp.on("error", (e) => {
             let name = $(e.trigger).attr('data-cp-title') || "";
-            this.toast(`复制${name}失败`, TYPE_DANGER)
+            this.toast(`Failed to copy ${name}`, TYPE_DANGER)
         })
         this.lazyLoadInit()
         $('#post-main, #sidebar').theiaStickySidebar({
@@ -636,7 +636,7 @@ class Puock {
                 const cp = new ClipboardJS('.cp-code');
                 cp.on("success", (e) => {
                     e.clearSelection();
-                    this.toast('已复制到剪切板')
+                    this.toast('Copied to clipboard')
                 })
             }
         }
@@ -757,7 +757,7 @@ class Puock {
         }
     }
 
-    infoToastShow(text, title = '提示') {
+    infoToastShow(text, title = 'Notice') {
         const infoToast = $('#infoToast');
         $("#infoToastTitle").html(title);
         $("#infoToastText").html(text);
@@ -824,17 +824,17 @@ class Puock {
         $(document).on('submit', '#comment-form', (e) => {
             e.preventDefault();
             if ($("#comment-logged").val() === '0' && ($.trim($("#comment_author").val()) === '' || $.trim($("#comment_email").val()) === '')) {
-                this.toast('评论信息不能为空', TYPE_WARNING);
+                this.toast('Comment info cannot be empty', TYPE_WARNING);
                 return;
             }
             if ($.trim($("#comment").val()) === '') {
-                this.toast('评论内容不能为空', TYPE_WARNING);
+                this.toast('Comment content cannot be empty', TYPE_WARNING);
                 return;
             }
             if (this.data.params.vd_comment) {
                 if (this.data.params.vd_type === 'img') {
                     if ($.trim($("#comment-vd").val()) === '') {
-                        this.toast('验证码不能为空', TYPE_WARNING);
+                        this.toast('Verification code cannot be empty', TYPE_WARNING);
                         return;
                     }
                 } else {
@@ -857,7 +857,7 @@ class Puock {
             data: this.parseFormData(el, args),
             type: el.attr('method'),
             success: (data) => {
-                this.toast('评论已提交成功', TYPE_SUCCESS);
+                this.toast('Comment submitted successfully', TYPE_SUCCESS);
                 this.loadCommentCaptchaImage($(".comment-captcha"));
                 $("#comment-vd").val("");
                 $("#comment").val("");
@@ -898,20 +898,20 @@ class Puock {
     commentFormLoadStateChange() {
         const commentSubmit = $("#comment-submit");
         if (this.data.comment.loading) {
-            commentSubmit.html("请等待" + this.data.comment.time + "s");
+            commentSubmit.html("Please wait " + this.data.comment.time + "s");
             this.data.comment.val = setInterval(() => {
                 if (this.data.comment.time <= 1) {
                     clearInterval(this.data.comment.val);
-                    commentSubmit.html("提交评论");
+                    commentSubmit.html("Submit comment");
                     commentSubmit.removeAttr("disabled");
                     this.data.comment.time = 5;
                 } else {
                     --this.data.comment.time;
-                    commentSubmit.html("请等待" + this.data.comment.time + "s");
+                    commentSubmit.html("Please wait " + this.data.comment.time + "s");
                 }
             }, 1000);
         } else {
-            commentSubmit.html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>提交中...');
+            commentSubmit.html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Submitting...');
             commentSubmit.attr("disabled", true)
         }
         this.data.comment.loading = !this.data.comment.loading;
@@ -921,7 +921,7 @@ class Puock {
         $(document).on("click", "[id^=comment-reply-]", (e) => {
             this.data.comment.replyId = $(this.ct(e)).attr("data-id");
             if ($.trim(this.data.comment.replyId) === '') {
-                this.toast('结构有误', TYPE_DANGER);
+                this.toast('Structure error', TYPE_DANGER);
                 return;
             }
             const cf = $("#comment-form"),
@@ -953,7 +953,7 @@ class Puock {
         $(document).on("click", "#post-like", (e) => {
             const currentTime = new Date().getTime();
             if (currentTime - lastSendTime < throttleTimeMs) {
-                this.toast("操作过于频繁", TYPE_WARNING);
+                this.toast("Operation too frequent", TYPE_WARNING);
                 return
             }
             lastSendTime = currentTime
@@ -967,7 +967,7 @@ class Puock {
                     this.toast(res.t);
                 }
             }, 'json').fail(() => {
-                this.toast('点赞异常', TYPE_DANGER);
+                this.toast('Like error', TYPE_DANGER);
             })
         })
     }
@@ -1002,7 +1002,7 @@ class Puock {
             error: (err)=> {
                 console.error(err)
                 this.stopLoading(loading)
-                this.toast("获取内容节点数据失败", TYPE_DANGER)
+                this.toast("Failed to get content node data", TYPE_DANGER)
             }
         })
     }
@@ -1012,7 +1012,7 @@ class Puock {
             const el = $(this.ct(e));
             const noTitle = el.data("no-title") !== undefined;
             const noPadding = el.data("no-padding") !== undefined;
-            const title = el.attr("title") || el.data("title") || '提示';
+            const title = el.attr("title") || el.data("title") || 'Notice';
             const url = el.data("url");
             const onceLoad = el.data("once-load")
             const id = SparkMD5.hash(url)

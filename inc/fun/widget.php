@@ -2,11 +2,11 @@
 
 abstract class puockWidgetBase extends WP_Widget{
 
-    public static $puock = 'Puock主题';
+    public static $puock = 'Puock Theme';
 
-    protected $title = "标题";
+    protected $title = "Title";
 
-    protected $pre_title = '显示近期的';
+    protected $pre_title = 'Show recent ';
 
     function __construct() {
         WP_Widget::__construct($this->get_class_name(), self::$puock." ".$this->title,
@@ -26,7 +26,7 @@ abstract class puockWidgetBase extends WP_Widget{
         }
         if($type=='cats'){
             $out .= wp_dropdown_categories(array('name' => $fname,'echo'=>0,
-                'show_option_all' => '全部分类', 'hide_empty'=>0, 'hierarchical'=>1, 'selected'=>@$instance[$key]));
+                'show_option_all' => __('All Categories', PUOCK), 'hide_empty'=>0, 'hierarchical'=>1, 'selected'=>@$instance[$key]));
         }
         if($type=='text'){
             $out .= '<textarea class="monospace widefat" rows="10" cols="40" id="'.($fid).'" 
@@ -57,7 +57,7 @@ abstract class puockWidgetBase extends WP_Widget{
     }
 
     /**
-     * 合并公用字段
+     * Merge common fields
      * @param $array
      * @return array
      */
@@ -70,13 +70,13 @@ abstract class puockWidgetBase extends WP_Widget{
     }
 
     /**
-     * 合并公用form表单
+     * Merge common form
      * @param $instance
      */
     public function merge_common_form($instance){
-        $this->html_gen($instance, '隐藏标题', 'hide_title','checkbox',false);
-        $this->html_gen($instance, '图标类', 'icon');
-        $this->html_gen($instance, '区块class类', 'classes');
+        $this->html_gen($instance, __('Hide Title', PUOCK), 'hide_title','checkbox',false);
+        $this->html_gen($instance, __('Icon Class', PUOCK), 'icon');
+        $this->html_gen($instance, __('Block CSS Class', PUOCK), 'classes');
     }
 
     function update( $cur, $old ) {

@@ -86,7 +86,7 @@ function pk_the_author_class_out($count)
         default:
             return '';
     }
-    return '<span class="t-sm c-sub"><i class="fa-regular fa-gem mr-1"></i>' . __('评论达人', PUOCK) . ' LV.' . $level . '</span>';
+    return '<span class="t-sm c-sub"><i class="fa-regular fa-gem mr-1"></i>' . __('Commentator', PUOCK) . ' LV.' . $level . '</span>';
 }
 
 function pk_the_author_class($echo = true, $in_comment = null)
@@ -96,7 +96,7 @@ function pk_the_author_class($echo = true, $in_comment = null)
         $comment = $in_comment;
     }
     if ($comment->user_id == '1') {
-        $res = '<span class="t-sm text-danger"><i class="fa-regular fa-gem mr-1"></i>' . __('博主', PUOCK) . '</span>';
+        $res = '<span class="t-sm text-danger"><i class="fa-regular fa-gem mr-1"></i>' . __('Blogger', PUOCK) . '</span>';
     } else {
         $comment_author_email = $comment->comment_author_email;
         $cache_key = sprintf(PKC_AUTHOR_COMMENTS, md5($comment_author_email));
@@ -134,7 +134,7 @@ function get_post_category_link_exec($all = true, $class = '', $icon = '', $cid 
 {
     global $cat;
     if ($default == null) {
-        $default = __('无分类', PUOCK);
+        $default = __('Uncategorized', PUOCK);
     }
     if ($cid != null) {
         $cate = get_category($cid);
@@ -186,22 +186,22 @@ function pk_get_post_date()
     $day = 86400;
     switch ($c_time) {
         case $c_time < $day:
-            $res = __('近一天内',PUOCK);
+            $res = __('In the last day',PUOCK);
             break;
         case $c_time < ($day * 2):
-            $res = __('近两天内',PUOCK);
+            $res = __('In the last two days',PUOCK);
             break;
         case $c_time < ($day * 3):
-            $res = __('近三天内',PUOCK);
+            $res = __('In the last three days',PUOCK);
             break;
         case $c_time < ($day * 4):
-            $res = __('四天前',PUOCK);
+            $res = __('4 days ago',PUOCK);
             break;
         case $c_time < ($day * 5):
-            $res = __('五天前',PUOCK);
+            $res = __('5 days ago',PUOCK);
             break;
         case $c_time < ($day * 6):
-            $res = __('六天前',PUOCK);
+            $res = __('6 days ago',PUOCK);
             break;
         default:
             $res = get_the_date(get_option('date_format'));
@@ -288,8 +288,8 @@ add_action('media_buttons', 'smilies_custom_button');
 function smilies_custom_button($context)
 {
     echo '<a id="insert-smiley-button" style="position:relative" class="button" 
-        title="' . __('添加表情', PUOCK) . '" data-editor="content" href="javascript:;">  
-        <span>' . __('添加表情', PUOCK) . '</span> 
+        title="' . __('Add emoticons', PUOCK) . '" data-editor="content" href="javascript:;">  
+        <span>' . __('Add emoticons', PUOCK) . '</span> 
         </a><div id="insert-smiley-wrap" class="pk-media-wrap" style="display: none">' . get_wpsmiliestrans() . '</div>';
 }
 /**
@@ -406,7 +406,7 @@ function pk_breadcrumbs()
     $out = '<div id="breadcrumb" class="' . (pk_open_box_animated('animated fadeInUp', false)) . '">';
     $out .= '<nav aria-label="breadcrumb">';
     $out .= '<ol class="breadcrumb">';
-    $out .= '<li class="breadcrumb-item"><a class="a-link" href="' . home_url() . '">' . __('首页', PUOCK) . '</a></li>';
+    $out .= '<li class="breadcrumb-item"><a class="a-link" href="' . home_url() . '">' . __('Home', PUOCK) . '</a></li>';
     if (is_single() || is_category()) {
         $categorys = get_the_category();
         if (count($categorys) <= 0 && is_single()) {
@@ -425,13 +425,13 @@ function pk_breadcrumbs()
         $cats = str_replace("</a>", '</a></li>', $cats);
         $out .= $cats;
         if (is_single()) {
-            $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('正文', PUOCK) . '</li>';
+            $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('Article', PUOCK) . '</li>';
         } else if (is_category()) {
-            $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('文章列表', PUOCK) . '</li>';
+            $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('Article list', PUOCK) . '</li>';
         }
     } else if (is_search()) {
         $out .= '<li class="breadcrumb-item active " aria-current="page">' . (esc_html($_GET['s'])) . '</li>';
-        $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('搜索结果', PUOCK) . '</li>';
+        $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('Search results', PUOCK) . '</li>';
     } else if (is_author()) {
         $out .= '<li class="breadcrumb-item active " aria-current="page">' . get_the_author_meta('nickname') . '</li>';
     } else if (is_date()) {
@@ -441,12 +441,12 @@ function pk_breadcrumbs()
         $out .= '<li class="breadcrumb-item active " aria-current="page">' . ($post->post_title) . '</li>';
     } else if (is_tag()) {
         $tag_name = single_tag_title('', false);
-        $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('标签', PUOCK) . '</li>';
+        $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('Tag', PUOCK) . '</li>';
         $out .= '<li class="breadcrumb-item active " aria-current="page">' . ($tag_name) . '</li>';
     } else if (!empty($custom_seo_title)) {
         $out .= '<li class="breadcrumb-item active " aria-current="page">' . $custom_seo_title . '</li>';
     } else if (is_404()) {
-        $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('你访问的资源不存在', PUOCK) . '</li>';
+        $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('The resource you are accessing does not exist', PUOCK) . '</li>';
     }
     $out .= '</div></nav></ol>';
     return $out;

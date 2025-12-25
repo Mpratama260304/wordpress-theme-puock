@@ -6,14 +6,14 @@
     <div class="p-block" id="comments">
         <div>
             <span class="t-lg border-bottom border-primary puock-text pb-2"><i
-                        class="fa-regular fa-comments mr-1"></i><?php _e('评论', PUOCK) ?>（<?php comments_number() ?>）</span>
+                        class="fa-regular fa-comments mr-1"></i><?php _e('Comment', PUOCK) ?>（<?php comments_number() ?>）</span>
         </div>
         <?php if (comments_open()): ?>
             <?php if (get_option('comment_registration', '0') == '1' && !is_user_logged_in()): //登录后才可以评论 ?>
                 <div class="mt20 clearfix" id="comment-form-box">
                     <form class="mt10" id="comment-form" method="post">
                         <div class="form-group">
-                            <textarea placeholder="<?php _e('您必须要登录之后才可以进行评论', PUOCK) ?>" disabled id="comment"
+                            <textarea placeholder="<?php _e('You must be logged in to comment', PUOCK) ?>" disabled id="comment"
                                       name="comment" class="form-control form-control-sm t-sm" rows="4"></textarea>
                         </div>
                     </form>
@@ -22,10 +22,10 @@
                             <button class="btn btn-primary btn-ssm pk-modal-toggle" type="button"
                                     data-id="front-login"
                                     data-once-load="true"
-                                    title="快捷登录"
+                                    title="<?php echo esc_attr__('Quick login', PUOCK) ?>"
                                     data-url="<?php echo pk_ajax_url('pk_font_login_page', ['redirect' => get_permalink()]) ?>">
                                 <i
-                                        class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
+                                        class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('Quick login', PUOCK) ?>
                             </button>
                         </div>
                     <?php endif; ?>
@@ -35,7 +35,7 @@
                     <form class="mt10" id="comment-form" method="post"
                           action="<?php echo admin_url() . 'admin-ajax.php?action=comment_ajax' ?>">
                         <div class="form-group">
-                            <textarea placeholder="<?php _e('世界这么大发表一下你的看法~', PUOCK) ?>" id="comment" name="comment"
+                            <textarea placeholder="<?php _e('The world is so big and express your opinion~', PUOCK) ?>" id="comment" name="comment"
                                       class="form-control form-control-sm t-sm" rows="4"></textarea>
                         </div>
                         <div class="row row-cols-1 comment-info">
@@ -45,17 +45,17 @@
                                 <div class="col-12 col-sm-<?php echo $commentInfoCol ?>"><input type="text" id="comment_author"
                                                                                                 name="author"
                                                                                                 class="form-control form-control-sm t-sm"
-                                                                                                placeholder="<?php _e('昵称（必填）', PUOCK) ?>">
+                                                                                                placeholder="<?php _e('Nickname (required)', PUOCK) ?>">
                                 </div>
                                 <div class="col-12 col-sm-<?php echo $commentInfoCol ?>"><input type="email" id="comment_email"
                                                                                                 name="email"
                                                                                                 class="form-control form-control-sm t-sm"
-                                                                                                placeholder="<?php _e('邮箱（必填）', PUOCK) ?>">
+                                                                                                placeholder="<?php _e('Email (required)', PUOCK) ?>">
                                 </div>
                                 <div class="col-12 col-sm-<?php echo $commentInfoCol ?>"><input type="text" id="comment_url"
                                                                                                 name="url"
                                                                                                 class="form-control form-control-sm t-sm"
-                                                                                                placeholder="<?php _e('网站', PUOCK) ?>">
+                                                                                                placeholder="<?php _e('Website', PUOCK) ?>">
                                 </div>
 
                             <?php endif; ?>
@@ -63,7 +63,7 @@
                                 <div class="col-12 col-sm-3">
                                     <div class="row flex-row justify-content-end">
                                         <div class="col-8 col-sm-7 text-end pl15">
-                                            <input type="text" value="" placeholder="验证码" maxlength="4"
+                                            <input type="text" value="" placeholder="<?php echo esc_attr__('Verification code', PUOCK) ?>" maxlength="4"
                                                    class="form-control form-control-sm t-sm" name="comment-vd"
                                                    autocomplete="off"
                                                    id="comment-vd">
@@ -71,7 +71,7 @@
                                         <div class="col-4 col-sm-5 pr15" id="comment-captcha-box">
                                             <img class="comment-captcha captcha"
                                                  src="<?php echo pk_captcha_url('comment', 100, 28) ?>"
-                                                 alt="验证码">
+                                                 alt="<?php echo esc_attr__('Verification code', PUOCK) ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -85,9 +85,9 @@
                                 <?php if (is_user_logged_in()): $user = wp_get_current_user(); ?>
                                     <div class="puock-text t-sm">
                                         <input type="text" value="1" hidden name="comment-logged" id="comment-logged">
-                                        <span><strong><?php echo $user->data->display_name ?></strong>，<a
+                                        <span><strong><?php echo $user->data->display_name ?></strong>, <a
                                                     data-no-instant class="ta3 a-link"
-                                                    href="<?php echo wp_logout_url(get_the_permalink()) ?>"><?php _e('登出', PUOCK) ?></a></span>
+                                                    href="<?php echo wp_logout_url(get_the_permalink()) ?>"><?php _e('Sign out', PUOCK) ?></a></span>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!is_user_logged_in() && pk_oauth_platform_count() > 0): ?>
@@ -95,23 +95,23 @@
                                         <button class="btn btn-primary btn-ssm pk-modal-toggle" type="button"
                                                 data-once-load="true"
                                                 data-id="front-login"
-                                                title="快捷登录"
+                                                title="<?php echo esc_attr__('Quick login', PUOCK) ?>"
                                                 data-url="<?php echo pk_ajax_url('pk_font_login_page', ['redirect' => get_permalink()]) ?>">
                                             <i
-                                                    class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
+                                                    class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('Quick login', PUOCK) ?>
                                         </button>
                                     </div>
                                 <?php endif; ?>
                             </div>
                             <div>
                                 <button id="comment-cancel" type="button"
-                                        class="btn btn-outline-dark d-none btn-ssm"><?php _e('取消', PUOCK) ?></button>
+                                        class="btn btn-outline-dark d-none btn-ssm"><?php _e('Cancel', PUOCK) ?></button>
                                 <button id="comment-smiley" class="btn btn-outline-secondary btn-ssm pk-modal-toggle" type="button"
-                                        title="表情" data-once-load="true"
+                                        title="<?php echo esc_attr__('Emoticons', PUOCK) ?>" data-once-load="true"
                                         data-url="<?php echo pk_ajax_url('pk_ajax_dialog_smiley') ?>">
                                     <i class="fa-regular fa-face-smile t-md"></i></button>
                                 <button id="comment-submit" type="submit" class="btn btn-primary btn-ssm"><i
-                                            class="fa-regular fa-paper-plane"></i>&nbsp;<?php _e('发布评论', PUOCK) ?>
+                                            class="fa-regular fa-paper-plane"></i>&nbsp;<?php _e('Publish', PUOCK) ?>
                                 </button>
                             </div>
                         </div>

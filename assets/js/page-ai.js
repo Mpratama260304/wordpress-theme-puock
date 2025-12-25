@@ -368,11 +368,11 @@ jQuery(function () {
                     const useImgMode = $("#chat-use-img-mode").is(":checked")
                     const useModel = $("#chat-model").val()
                     if (!useImgMode && !useModel) {
-                        $p.toast('请先选择模型')
+                        $p.toast('Please select a model first')
                         return
                     }
                     if (text === "") {
-                        $p.toast('请先输入内容')
+                        $p.toast('Please enter content first')
                         return
                     }
                     this.putMsg({
@@ -444,7 +444,7 @@ jQuery(function () {
                             callback("", true, true)
                             return
                         }
-                        callback(`请求异常：${e}`, true, true)
+                        callback(`Request error: ${e}`, true, true)
                     } finally {
                         closeLoading()
                     }
@@ -464,10 +464,10 @@ jQuery(function () {
                                         <div class="fs14 content-box ${data.ai ? 'cursor-blink-after' : ''}">${this.parseContent(data.content)}</div>
                                         <div class="d-flex align-items-center mt-2 text-muted fs12">
                                             <div class="mr-1">
-                                                <i class="fa fa-${data.imgMode ? 'palette' : 'robot'} mr-1"></i>${data.imgMode ? 'AI绘画' : 'AI问答'}
+                                                <i class="fa fa-${data.imgMode ? 'palette' : 'robot'} mr-1"></i>${data.imgMode ? 'AI Drawing' : 'AI Q&A'}
                                             </div>
-                                            <div class="primary-text-hover pk-copy" data-cp-title="对话信息" data-cp-func="puockAiChatCopy" data-id="${id}">
-                                                <span><i class="fa-regular fa-copy mr-1"></i>复制</span>
+                                            <div class="primary-text-hover pk-copy" data-cp-title="Chat Info" data-cp-func="puockAiChatCopy" data-id="${id}">
+                                                <span><i class="fa-regular fa-copy mr-1"></i>Copy</span>
                                             </div>
                                         </div>
                                     </div>
@@ -482,8 +482,8 @@ jQuery(function () {
                 $(".chat-clear-history").on("click", () => {
                     const template = $(".chats").find(".chat-template")
                     const template_html = template.prop("outerHTML") ?? ""
-                    layer.confirm("确定要清空历史记录吗？", {
-                        btn: ['确定', '取消']
+                    layer.confirm("Are you sure you want to clear history?", {
+                        btn: ['Confirm', 'Cancel']
                     }, (index) => {
                         layer.close(index)
                         $(".chats").html(template_html)

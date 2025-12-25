@@ -31,8 +31,8 @@
             primaryColorSuppl: '#a537fb',
         },
         language:"<?php echo get_user_locale() ?>",
-        description:"<?php _e('简单/方便/高颜值', PUOCK) ?>",
-        tag: {text: "<?php _e('主题', PUOCK) ?>", color: 'rgb(155,39,238)'},
+        description:"<?php _e('Simple / Convenient / Good-looking', PUOCK) ?>",
+        tag: {text: "<?php _e('Theme', PUOCK) ?>", color: 'rgb(155,39,238)'},
         github: "https://github.com/Licoy/wordpress-theme-puock",
         qq: "https://licoy.cn/go/puock-update.php?r=qq_qun",
         license: "GPL V3",
@@ -42,7 +42,27 @@
         data:<?php echo json_encode(get_option(PUOCK_OPT)); ?>,
     }
 </script>
-<script type="text/javascript" crossorigin src="<?php echo get_template_directory_uri() ?>/assets/dist/setting/language/<?php echo get_user_locale() ?>.js?ver=<?php echo PUOCK_CUR_VER_STR ?>"></script>
+<?php
+// Determine the language file to load with fallback to en_US
+$user_locale = get_user_locale();
+$lang_dir = get_template_directory() . '/assets/dist/setting/language/';
+$lang_uri = get_template_directory_uri() . '/assets/dist/setting/language/';
+
+// Check if locale-specific file exists, otherwise fallback to en_US
+if (file_exists($lang_dir . $user_locale . '.js')) {
+    $lang_file = $user_locale;
+} elseif (strpos($user_locale, 'en_') === 0 || strpos($user_locale, 'en-') === 0) {
+    // English variants fallback to en_US
+    $lang_file = 'en_US';
+} elseif (strpos($user_locale, 'id_') === 0 || strpos($user_locale, 'id-') === 0) {
+    // Indonesian variants fallback to id_ID
+    $lang_file = 'id_ID';
+} else {
+    // Default fallback to en_US
+    $lang_file = 'en_US';
+}
+?>
+<script type="text/javascript" crossorigin src="<?php echo $lang_uri . $lang_file ?>.js?ver=<?php echo PUOCK_CUR_VER_STR ?>"></script>
 <?php
 if (file_exists(dirname(__FILE__) . '/template-script-dev.php')) {
     include_once dirname(__FILE__) . '/template-script-dev.php';
